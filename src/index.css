@@ -37,5 +37,8 @@ legend {
     font-size: 1.2rem;
 }
 .hintRejected {
-    color: red;
+    color: red !important;
+}
+.hintContact {
+    color: darkorange;
 }
