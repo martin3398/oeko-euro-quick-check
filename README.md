@@ -1,1 +1,1 @@
-# oeko-euro-quick-check
+# Öko Euro Quick Check
