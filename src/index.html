@@ -14,7 +14,11 @@
         <legend>Allgemein</legend>
         <div class="mb-3">
             <label for="participants" class="form-label">Teilnehmeranzahl</label>
-            <input type="number" id="participants" class="form-control" min="1" placeholder="Anzahl der Teilnehmer">
+            <input type="number" id="participants" class="form-control" min="1" placeholder="Anzahl der Teilnehmer" value="1" onchange="checkCriteria()">
+        </div>
+        <div class="mb-3">
+            <label for="days" class="form-label">Anzahl der Tage</label>
+            <input type="number" id="days" class="form-control" min="1" placeholder="Anzahl der Tage" value="1" onchange="checkCriteria()">
         </div>
     </fieldset>
 
@@ -26,44 +30,54 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport1" class="form-check-input">
+                        <input type="checkbox" id="transport1" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport1" class="form-check-label">Bahn</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport2" class="form-check-input">
+                        <input type="checkbox" id="transport2" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport2" class="form-check-label">Fahrrad</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport3" class="form-check-input">
+                        <input type="checkbox" id="transport3" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport3" class="form-check-label">Zu Fuß</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport4" class="form-check-input">
+                        <input type="checkbox" id="transport4" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport4" class="form-check-label">ÖPNV</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport5" class="form-check-input">
+                        <input type="checkbox" id="transport5" class="form-check-input" onchange="toggleBusSection(); checkCriteria()">
                         <label for="transport5" class="form-check-label">Reisebus</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport6" class="form-check-input">
+                        <input type="checkbox" id="transport6" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport6" class="form-check-label">Auto</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check">
-                        <input type="checkbox" id="transport7" class="form-check-input">
+                        <input type="checkbox" id="transport7" class="form-check-input" onchange="checkCriteria()">
                         <label for="transport7" class="form-check-label">Flugzeug</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 collapse" id="busSection">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-check">
+                        <input type="checkbox" id="busEmpty" class="form-check-input" onchange="checkCriteria()">
+                        <label for="busEmpty" class="form-check-label">Hat der Reisebus Leerfahrten?</label>
                     </div>
                 </div>
             </div>
@@ -71,11 +85,11 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="carCount" class="form-label">Anzahl an Kraftfahrzeugen</label>
-                <input type="number" id="carCount" class="form-control" min="0" placeholder="Anzahl der Kraftfahrzeuge">
+                <input type="number" id="carCount" class="form-control" min="0" placeholder="Anzahl der Kraftfahrzeuge" value="0" onchange="checkCriteria()">
             </div>
             <div class="col-md-6 mb-3">
                 <label for="carDistance" class="form-label">Kilometerzahl pro Auto</label>
-                <input type="number" id="carDistance" class="form-control" min="0" placeholder="Kilometerzahl pro Auto">
+                <input type="number" id="carDistance" class="form-control" min="0" placeholder="Kilometerzahl pro Auto" onchange="checkCriteria()">
             </div>
         </div>
     </fieldset>
@@ -84,23 +98,23 @@
     <fieldset>
         <legend>Müll</legend>
         <div class="form-check mb-3">
-            <input type="checkbox" id="waste1" class="form-check-input">
+            <input type="checkbox" id="waste1" class="form-check-input" onchange="checkCriteria()">
             <label for="waste1" class="form-check-label">Wird Einwegplastik vermieden?</label>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" id="waste2" class="form-check-input">
+            <input type="checkbox" id="waste2" class="form-check-input" onchange="checkCriteria()">
             <label for="waste2" class="form-check-label">Werden eigene Trinkflaschen statt Einwegflaschen genutzt?</label>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" id="waste3" class="form-check-input">
+            <input type="checkbox" id="waste3" class="form-check-input" onchange="checkCriteria()">
             <label for="waste3" class="form-check-label">Werden Brotdosen statt Plastik- oder Papierbeutel genutzt?</label>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" id="waste4" class="form-check-input">
+            <input type="checkbox" id="waste4" class="form-check-input" onchange="checkCriteria()">
             <label for="waste4" class="form-check-label">Werden Essensreste verkocht oder verteilt?</label>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" id="waste5" class="form-check-input">
+            <input type="checkbox" id="waste5" class="form-check-input" onchange="checkCriteria()">
             <label for="waste5" class="form-check-label">Wird Müll getrennt oder existiert ein Konzept zur Müllvermeidung</label>
         </div>
     </fieldset>
@@ -113,19 +127,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food1" class="form-check-input" onclick="toggleMeatSection()" value="vegan">
+                        <input type="radio" name="foodType" id="food1" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="vegan">
                         <label for="food1" class="form-check-label">Vegan</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food2" class="form-check-input" onclick="toggleMeatSection()" value="vegetarian">
+                        <input type="radio" name="foodType" id="food2" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="vegetarian">
                         <label for="food2" class="form-check-label">Vegetarisch</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food3" class="form-check-input" onclick="toggleMeatSection()" value="meat">
+                        <input type="radio" name="foodType" id="food3" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="meat">
                         <label for="food3" class="form-check-label">Mit Fleisch/Fisch</label>
                     </div>
                 </div>
@@ -136,24 +150,24 @@
         <div id="meatSection" class="collapse">
             <div class="mb-4">
                 <label for="meatMeals" class="form-label">Wenn es Fleisch oder Fisch gibt, wie viele Hauptmahlzeiten mit Fleisch oder Fisch sind geplant?</label>
-                <input type="number" id="meatMeals" class="form-control" min="0" placeholder="Anzahl der Mahlzeiten">
+                <input type="number" id="meatMeals" class="form-control" min="0" placeholder="Anzahl der Mahlzeiten" onchange="checkCriteria()">
             </div>
             <div class="form-check mb-3">
-                <input type="checkbox" id="food4" class="form-check-input">
+                <input type="checkbox" id="food4" class="form-check-input" onchange="checkCriteria()">
                 <label for="food4" class="form-check-label">Wenn es Fleisch gibt: Hat das Fleisch mindestens Bio-Qualität</label>
             </div>
             <div class="form-check mb-4">
-                <input type="checkbox" id="food5" class="form-check-input">
+                <input type="checkbox" id="food5" class="form-check-input" onchange="checkCriteria()">
                 <label for="food5" class="form-check-label">Wenn es Fisch gibt: Hat der Fisch das MSC-Siegel?</label>
             </div>
         </div>
 
         <div class="form-check mb-3">
-            <input type="checkbox" id="food6" class="form-check-input">
+            <input type="checkbox" id="food6" class="form-check-input" onchange="checkCriteria()">
             <label for="food6" class="form-check-label">Kaffee, Kakao, Schokolade, Schoko-Nuss-Aufstriche und Bananen werden fair bezogen.</label>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" id="food7" class="form-check-input">
+            <input type="checkbox" id="food7" class="form-check-input" onchange="checkCriteria()">
             <label for="food7" class="form-check-label">Beim Kauf von Lebensmitteln wurde auf Regionalität und Saisonalität geachtet.</label>
         </div>
     </fieldset>
@@ -162,24 +176,42 @@
     <fieldset>
         <legend>Thematische Auseinandersetzung</legend>
         <div class="form-check mb-3">
-            <input type="checkbox" id="theme1" class="form-check-input">
-            <label for="theme1" class="form-check-label">Ökologische Maßnahmen werden den Teilnehmenden genannt</label>
+            <input type="checkbox" id="theme1" class="form-check-input" onchange="checkCriteria()">
+            <label for="theme1" class="form-check-label">Ökologische Maßnahmen werden den Teilnehmenden genannt und erklärt</label>
         </div>
     </fieldset>
 
-    <!-- Check Button -->
-    <div class="text-center mb-3">
-        <button type="button" class="btn btn-primary btn-lg" onclick="checkCriteria()">Check</button>
-    </div>
-
-    <div class="form-check">
-        <input type="checkbox" id="show-hints" class="form-check-input">
-        <label for="show-hints" class="form-check-label">Zeige verhindernde Eingaben</label>
-    </div>
-
     <fieldset>
         <legend>Ergebnis</legend>
-        <div class="mb-3" id="result"></div>
+
+        <div class="mb-5">
+            <div class="form-check">
+                <input type="checkbox" id="showHints" class="form-check-input" onchange="checkCriteria()">
+                <label for="showHints" class="form-check-label">Zeige verhindernde Eingaben</label>
+            </div>
+        </div>
+        <div class="mb-3 collapse" id="resultAccepted">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" fill="green"/>
+                <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" fill="green"/>
+            </svg>
+            <h4 style="display: inline; margin-left: 8px;">Wird voraussichtlich stattgegeben</h4>
+        </div>
+        <div class="mb-3 collapse" id="resultContact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" fill="orange"/>
+                <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z" fill="orange"/>
+            </svg>
+            <h4 style="display:inline; margin-left: 8px;">Bitte kontaktiert den Öko AK!</h4>
+        </div>
+        <div class="mb-3 collapse" id="resultRejected">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" fill="red"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" fill="red"/>
+            </svg>
+            <h4 style="display:inline; margin-left: 8px;">Wird voraussichtlich abgelehnt</h4>
+        </div>
+        <div class="mb-3" id="result-error"></div>
     </fieldset>
 </div>
 

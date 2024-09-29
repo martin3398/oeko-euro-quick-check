@@ -4,9 +4,21 @@
     padding: 10px;
     margin-top: 20px;
 }
+.error {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
 .contact {
     background-color: yellow;
     color: black;
+    padding: 10px;
+    margin-top: 20px;
+}
+.accepted {
+    background-color: green;
+    color: white;
     padding: 10px;
     margin-top: 20px;
 }
@@ -23,4 +35,7 @@ fieldset {
 legend {
     font-weight: bold;
     font-size: 1.2rem;
+}
+.hintRejected {
+    color: red;
 }
