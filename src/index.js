@@ -162,4 +162,10 @@ function toggleBusSection() {
     }
 }
 
+function showResults() {
+    document.getElementById('results').classList.add('show');
+    document.getElementById('resultBtn').classList.remove('show');
+}
+
+
 checkCriteria();
