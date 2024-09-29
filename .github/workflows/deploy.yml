@@ -36,16 +36,10 @@ jobs:
       - name: Minify JavaScript Files
         run: |
           mkdir -p public
-          npx uglify-js src/*.js -o public/script.min.js
+          npx uglify-js src/*.js -o public/index.js
 
-      - name: Minify HTML Files
-        run: |
-          npx html-minifier src/*.html \
-            --collapse-whitespace \
-            --remove-comments \
-            --minify-css true \
-            --minify-js true \
-            -o public/index.html
+      - name: Copy HTML and CSS Files
+        run: cp src/*.html src/*.css public/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
