@@ -1,0 +1,9 @@
+
+{
+  "name": "oeko-euro-quick-check",
+  "version": "1.0.0",
+  "devDependencies": {
+    "uglify-js": "^3.19.3",
+    "html-minifier": "^4.0.0"
+  }
+}
