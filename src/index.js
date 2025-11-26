@@ -53,11 +53,9 @@ function isRejected(participants, cars, days, showHints) {
     if (cars > allowedCars) rejected = true;
     setRejectedHint('carCount', cars > allowedCars, showHints);
 
-    const isVegan = document.getElementById('food1').checked;
-    const isVegetarian = document.getElementById('food2').checked;
-    const meatMeals = document.getElementById('meatMeals').value;
-    if (!isVegan && !isVegetarian && meatMeals >= days) rejected = true;
-    setRejectedHint('meatMeals', !isVegan && !isVegetarian && meatMeals >= days, showHints);
+    const isMeat = document.getElementById('food3').checked;
+    if (isMeat) rejected = true;
+    setRejectedHint('food3', isMeat, showHints);
 
     return rejected;
 }
@@ -77,14 +75,6 @@ function isAccepted(showHints) {
     const bottlesChecked = document.getElementById('waste2').checked;
     const lunchboxesChecked = document.getElementById('waste3').checked;
     const leftoversChecked = document.getElementById('waste4').checked;
-
-    const veganChecked = document.getElementById('food1').checked;
-    const vegetarianChecked = document.getElementById('food2').checked;
-    const meatChecked = document.getElementById('food3').checked;
-    const meatMealsInput = parseInt(document.getElementById('meatMeals').value, 10) || 0;
-    const meatMeals = veganChecked || vegetarianChecked ? 0 : meatMealsInput;
-    const bioMeatChecked = document.getElementById('food4').checked;
-    const mscFishChecked = document.getElementById('food5').checked;
 
     const fairTradeChecked = document.getElementById('food6').checked;
     const regionalChecked = document.getElementById('food7').checked;
@@ -106,16 +96,6 @@ function isAccepted(showHints) {
     setContactHint('waste3', !lunchboxesChecked, showHints);
     if (!leftoversChecked) accepted = false;
     setContactHint('waste4', !leftoversChecked, showHints);
-    if (days < 3 && meatMeals > 0) accepted = false;
-    if (days < 3) setContactHint('meatMeals', meatMeals > 0, showHints);
-    if (days === 3 && meatMeals > 1) accepted = false;
-    if (days === 3) setContactHint('meatMeals', meatMeals > 1, showHints);
-    if (days > 3 && meatMeals > Math.floor(days / 3)) accepted = false;
-    if (days > 3) setContactHint('meatMeals', meatMeals > Math.floor(days / 3), showHints);
-    if (meatChecked && meatMeals > 0 && !bioMeatChecked) accepted = false;
-    if (meatChecked) setContactHint('food4', meatChecked && meatMeals > 0 && !bioMeatChecked, showHints);
-    if (meatChecked && meatMeals > 0 && !mscFishChecked) accepted = false;
-    if (meatChecked) setContactHint('food5', meatChecked && meatMeals > 0 && !mscFishChecked, showHints);
     if (!fairTradeChecked) accepted = false;
     setContactHint('food6', !fairTradeChecked, showHints);
     if (!regionalChecked) accepted = false;
@@ -142,15 +122,6 @@ function setContactHint(id, showHint, showHints) {
     }
 }
 
-function toggleMeatSection() {
-    const selectedFoodType = document.querySelector('input[name="foodType"]:checked').value;
-
-    if (selectedFoodType === 'meat') {
-        document.getElementById('meatSection').classList.add('show');
-    } else {
-        document.getElementById('meatSection').classList.remove('show');
-    }
-}
 
 function toggleBusSection() {
     const busSelected = document.getElementById('transport5').checked;

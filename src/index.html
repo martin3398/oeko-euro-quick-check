@@ -127,40 +127,25 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food1" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="vegan">
+                        <input type="radio" name="foodType" id="food1" class="form-check-input" onclick="checkCriteria()" value="vegan">
                         <label for="food1" class="form-check-label">Vegan</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food2" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="vegetarian">
+                        <input type="radio" name="foodType" id="food2" class="form-check-input" onclick="checkCriteria()" value="vegetarian">
                         <label for="food2" class="form-check-label">Vegetarisch</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-check mb-3">
-                        <input type="radio" name="foodType" id="food3" class="form-check-input" onclick="toggleMeatSection(); checkCriteria();" value="meat">
+                        <input type="radio" name="foodType" id="food3" class="form-check-input" onclick="checkCriteria()" value="meat">
                         <label for="food3" class="form-check-label">Mit Fleisch/Fisch</label>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Collapsible Meat Section -->
-        <div id="meatSection" class="collapse">
-            <div class="mb-4">
-                <label for="meatMeals" class="form-label">Wenn es Fleisch oder Fisch gibt, wie viele Hauptmahlzeiten mit Fleisch oder Fisch sind geplant?</label>
-                <input type="number" id="meatMeals" class="form-control" min="0" placeholder="Anzahl der Mahlzeiten" onchange="checkCriteria()">
-            </div>
-            <div class="form-check mb-3">
-                <input type="checkbox" id="food4" class="form-check-input" onchange="checkCriteria()">
-                <label for="food4" class="form-check-label">Wenn es Fleisch gibt: Hat das Fleisch mindestens Bio-Qualität</label>
-            </div>
-            <div class="form-check mb-4">
-                <input type="checkbox" id="food5" class="form-check-input" onchange="checkCriteria()">
-                <label for="food5" class="form-check-label">Wenn es Fisch gibt: Hat der Fisch das MSC-Siegel?</label>
-            </div>
-        </div>
 
         <div class="form-check mb-3">
             <input type="checkbox" id="food6" class="form-check-input" onchange="checkCriteria()">
